@@ -23,6 +23,13 @@
 # -o pipefail : fail if any part of a pipeline fails
 set -euo pipefail
 
+# ---------------⇓---------------
+# Bash not sh needed to run.
+if [ -z "${BASH_VERSION:-}" ]; then
+  echo "Error: This is a __bash__ script, please use bash, or chmod +x and direct execution."
+  exit 1
+fi
+# ---------------⇑---------------
 
 # ====================================== 
 # Script name, used in printing
